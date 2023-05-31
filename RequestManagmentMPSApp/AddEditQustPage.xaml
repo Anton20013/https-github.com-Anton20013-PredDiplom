@@ -1,0 +1,62 @@
+﻿<Page x:Class="RequestManagmentMPSApp.AddEditQustPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RequestManagmentMPSApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditQustPage" Loaded="Page_Loaded">
+
+    <Grid>
+        
+        <StackPanel Orientation="Horizontal">
+          
+            <StackPanel Margin="5" Width="300">
+                <TextBlock HorizontalAlignment="Center" FontSize="16" FontWeight="ExtraBlack"  Margin="0,10,0,50">Заявка</TextBlock>
+                <StackPanel Margin="5">
+                    <TextBlock>Название</TextBlock>
+                    <TextBox x:Name="tBox1"></TextBox>
+                    <TextBlock>Заявитель</TextBlock>
+                    <ComboBox x:Name="cBox1"></ComboBox>
+                    <TextBlock>Дата подачи</TextBlock>
+                    <DatePicker x:Name="dPicer1"></DatePicker>
+                    <TextBlock>Тема заявки</TextBlock>
+                    <ComboBox x:Name="cBox2"></ComboBox>
+                    <TextBlock>Описание заявки</TextBlock>
+                    <TextBox x:Name="tBox2" Height="50" MaxLines="10" MinLines="10"></TextBox>
+                    <TextBlock>Статус заявки</TextBlock>
+                    <ComboBox x:Name="cBox3"></ComboBox>
+                </StackPanel>
+               
+            </StackPanel>
+            <StackPanel Margin="5" Width="480">
+                <TextBlock HorizontalAlignment="Center" FontSize="16" FontWeight="ExtraBlack"  Margin="0,10,0,50">Сообщения по заявке</TextBlock>
+                <DataGrid Height="212" Margin="5" x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Номер" Binding="{Binding Number}" Width="1*"/>
+                        <DataGridTextColumn Header="Ответчик" Binding="{Binding User.LastName}" Width="5*"/>
+                    </DataGrid.Columns>
+                    <DataGrid.RowDetailsTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Text}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGrid.RowDetailsTemplate>
+                </DataGrid>
+       
+                <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
+                    <Button x:Name="btnDelQuast" Click="btnDelQuast_Click" Margin="2">Удалить</Button>
+                    <Button x:Name="btnUpdateQuast" Click="btnUpdateQuast_Click" Margin="2">Обновить</Button>
+                    <Button x:Name="btnEditQuast" Click="btnEditQuast_Click" Margin="2">Изменить</Button>
+                    <Button x:Name="btnAddQuast" Click="btnAddQuast_Click" Margin="2">Добавить</Button>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" Margin="10,10,10,20">
+            <Button Width="150" FontSize="16" Margin="2" Click="Button_Click">Сохранить</Button>
+            <Button Width="150" FontSize="16" Margin="2" Click="Button_Click_1">Отмена</Button>
+        </StackPanel>
+    </Grid>
+</Page>

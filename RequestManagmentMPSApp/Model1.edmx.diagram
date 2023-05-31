@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ecc07af0ad914343969e833f36f974cd" Name="Diagram1">
+        <EntityTypeShape EntityType="RequestManagmentMPSDBModel.Message" Width="1.5" PointX="7.5" PointY="4.25" />
+        <EntityTypeShape EntityType="RequestManagmentMPSDBModel.Request" Width="1.5" PointX="5.25" PointY="3.75" />
+        <EntityTypeShape EntityType="RequestManagmentMPSDBModel.Role" Width="1.5" PointX="0.75" PointY="4.625" />
+        <EntityTypeShape EntityType="RequestManagmentMPSDBModel.Status" Width="1.5" PointX="3" PointY="8.375" />
+        <EntityTypeShape EntityType="RequestManagmentMPSDBModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="8" />
+        <EntityTypeShape EntityType="RequestManagmentMPSDBModel.Topic" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="RequestManagmentMPSDBModel.User" Width="1.5" PointX="3" PointY="3.75" />
+        <AssociationConnector Association="RequestManagmentMPSDBModel.FK_Message_Request" />
+        <AssociationConnector Association="RequestManagmentMPSDBModel.FK_Message_User" />
+        <AssociationConnector Association="RequestManagmentMPSDBModel.FK_Request_Status" />
+        <AssociationConnector Association="RequestManagmentMPSDBModel.FK_Request_Topic" />
+        <AssociationConnector Association="RequestManagmentMPSDBModel.FK_Request_User" />
+        <AssociationConnector Association="RequestManagmentMPSDBModel.FK_User_Role" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
